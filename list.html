@@ -1,0 +1,26 @@
+<div>
+	<input type="text" ng-model="nivel" placeholder="Informe o nivel atual do rio">
+</div>
+<div>
+	<input type="text" ng-model="search" class="search-query" placeholder="Pesquisa">
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Rua</th>
+	<th>Bairro</th>
+    <th>Cota</th>
+    <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="cota in cotas | orderByPriority | filter:search | filter:nivelFilter | orderBy:'rua'">
+    <td>{{cota.rua}}</td>
+    <td>{{cota.bairro}}</td>
+	<td>{{cota.cota}}</td>
+    <td>
+      <a href="#/edit/{{cota.$id}}"><i class="icon-pencil"></i></a>
+    </td>
+  </tr>
+  </tbody>
+</table>

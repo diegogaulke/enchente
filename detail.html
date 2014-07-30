@@ -1,0 +1,26 @@
+<form name="myForm">
+  <div class="control-group" ng-class="{error: myForm.rua.$invalid && !myForm.name.$pristine}">
+    <label>Rua</label>
+    <input type="text" name="rua" ng-model="cota.rua" required>
+  </div>
+
+  <div class="control-group" ng-class="{error: myForm.bairro.$invalid && !myForm.bairro.$pristine}">
+    <label>Bairro</label>
+    <input type="text" name="bairro" ng-model="cota.bairro" required>
+  </div>
+
+  <div class="control-group" ng-class="{error: myForm.cota.$invalid && !myForm.cota.$pristine}">
+    <label>Cota</label>
+    <input type="text" name="cota" ng-model="cota.cota" required>
+  </div>
+
+  <label>Detalhes</label>
+  <textarea name="detalhes" ng-model="cota.detalhes"></textarea>
+ 
+  <br>
+  <a href="#/" class="btn">Cancelar</a>
+  <button ng-click="save()" ng-disabled="myForm.$invalid"
+          class="btn btn-primary">Salvar</button>
+  <button ng-click="destroy()"
+          ng-show="cota.$remove" class="btn btn-danger">Deletar</button>
+</form>
