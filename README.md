@@ -1,5 +1,4 @@
-enchente (flood)
+River Level CRUD example
 ========
 
-This is a example of AngularJS application that connects with Firebase.IO.
-It don't follow the John Papa's style guide yet.
+This is a example of AngularJS application CRUD that connects with Firebase.IO.
