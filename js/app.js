@@ -1,24 +1,29 @@
-var app = angular.module('cotas', [ 'ngRoute', 'firebase' ])
-.value('fbURL', 'https://cota-encente.firebaseio.com/')
- .factory('Cotas', function($firebase, fbURL) {
-  return $firebase(new Firebase(fbURL));
-});
-
-app.config(function($routeProvider) {
-  $routeProvider
-    .when('/', {
-      controller:'ListCtrl',
-      templateUrl:'list.html'
-    })
-    .when('/edit/:projectId', {
-      controller:'EditCtrl',
-      templateUrl:'detail.html'
-    })
-    .when('/new', {
-      controller:'CreateCtrl',
-      templateUrl:'detail.html'
-    })
-    .otherwise({
-      redirectTo:'/'
-    });
-});
+(function() {
+	'use strict';
+	
+	angular
+		.module('cotas', [ 'ngRoute', 'firebase' ])
+		.config(config);
+		
+	function config($routeProvider) {
+	  $routeProvider
+		.when('/', {
+		  controller:'ListCtrl',
+		  controllerAs: 'list',
+		  templateUrl:'list.html'
+		})
+		.when('/edit/:id', {
+		  controller:'EditCtrl',
+		  controllerAs: 'edit',
+		  templateUrl:'edit.html'
+		})
+		.when('/new', {
+		  controller:'CreateCtrl',
+		  controllerAs: 'create',
+		  templateUrl:'create.html'
+		})
+		.otherwise({
+		  redirectTo:'/'
+		});
+	}	
+})();

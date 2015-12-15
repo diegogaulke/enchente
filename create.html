@@ -1,0 +1,35 @@
+<br/><br/>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">New Street River Level</h3>
+	</div>
+	<div class="panel-body">
+		<form name="myForm">
+			<div class="form-group" ng-class="{error: myForm.rua.$invalid && !myForm.name.$pristine}">
+				<label class="col-sm-2 control-label">Street</label>
+				<input type="text" name="rua" ng-model="create.cota.rua" required>
+			</div>
+
+			<div class="form-group" ng-class="{error: myForm.bairro.$invalid && !myForm.bairro.$pristine}">
+				<label class="col-sm-2 control-label">Neighborhood</label>
+				<input type="text" name="bairro" ng-model="create.cota.bairro" required>
+			</div>
+
+			<div class="form-group" ng-class="{error: myForm.cota.$invalid && !myForm.cota.$pristine}">
+				<label class="col-sm-2 control-label">Level</label>
+				<input type="text" name="cota" ng-model="create.cota.cota" required>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Details</label>
+				<textarea name="detalhes" ng-model="create.cota.detalhes"></textarea>
+			</div>
+			
+			<div>
+			  <a href="#/" class="btn">Cancel</a>
+			  <button ng-click="create.save()" ng-disabled="myForm.$invalid"
+					  class="btn btn-primary">Save</button>
+			</div>
+		</form>
+	</div>
+</div>
