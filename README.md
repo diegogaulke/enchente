@@ -1,7 +1,7 @@
 River Level CRUD example
 ========
 
-This is a example of AngularJS application CRUD that connects to Firebase.IO.<br>
+This is a example of AngularJS (Angular 1) application CRUD that connects to Firebase.IO.<br>
 You need to run this app on an httpserver.
 
 
